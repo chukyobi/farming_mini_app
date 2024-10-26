@@ -1,0 +1,235 @@
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5%;
+    color: white;
+    overflow: hidden;
+}
+
+.nav {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-between;
+}
+
+/* .profile_section {
+    display: flex;
+    align-items: center;
+}
+
+.profile_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background-color: #3a3a3a;
+    border-radius: 50%;
+}
+
+.profile {
+    width: 30px;
+    height: 30px;
+}
+
+.profile_details {
+    display: flex;
+    flex-direction: column;
+    padding-left: 10px;
+}
+
+.profile_details h2 {
+    font-size: 12px;
+    color: #f3f3f3;
+}
+
+.profile_details h3 {
+    font-size: 10px;
+    color: #f3f3f3;
+}
+
+.profile_details h2, .profile_details h3 {
+    margin: 0;
+} */
+
+.wallet_container {
+    display: flex;
+    align-items: center;
+    background-color: #A3FF12;
+    padding: 5px 10px;
+    border-radius: 6px;
+    /* border: 0.2px solid #fff; */
+    cursor: pointer; 
+}
+
+.wallet_icon {
+    width: 10px;
+    height: 10px;
+    margin-right: 8px;
+    color: #00ff00;
+}
+
+.wallet_id {
+    font-size: 10px;
+    color: #fff;
+}
+
+/* New styles for modal */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    opacity: 10;
+}
+
+/* Modal Styles */
+.modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #11101C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+   
+  }
+  
+  .modal-content {
+    background-color: #11101C;
+    padding: 20px;
+    padding-bottom: 40px;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 400px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-height: 100vh;
+    color: #fff;
+  }
+  
+  .wallet-details {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+  }
+  .id{
+    font-size: 12px;
+    font-weight: 800;
+    background-color:  #00ff00;
+    color: #f3f3f3;
+    padding: 10%;
+    word-wrap: break-word;
+  }
+  .space{padding: 10%;}
+
+  .wallet_icon_modal {
+    width: 48px;
+    height: 48px;
+    margin-bottom: 10px;
+  }
+
+  .delete_pop{
+    padding-top: 10%;
+  }
+  
+  .modal-icons {
+    display: flex;
+    justify-content: space-around;
+   
+    margin-top: 10px;
+  }
+  
+  .modal-icons img {
+    width: 34px;
+    height: 34px;
+    cursor: pointer;
+  }
+  
+  .spinner {
+    font-size: 18px;
+    color: #11101C;
+  }
+ 
+  
+  
+  .success-message {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  /* .success-message p {
+    margin: 0;
+    font-size: 16px;
+  } */
+  
+  /* form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-top: 10%;
+  } */
+  
+  form label {
+    margin-bottom: 5px;
+  }
+  
+  form input {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  form button {
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  form button:hover {
+    background-color: #0056b3;
+  }
+  
+  .delete-button {
+    padding: 10px 20px;
+    background-color: #dc3545;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .delete-button:hover {
+    background-color: #c82333;
+  }
+  
+  button {
+    padding: 10px 20px;
+    margin-top: 10px;
+    background-color: #6c757d;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  button:hover {
+    background-color: #5a6268;
+  }

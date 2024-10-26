@@ -1,0 +1,67 @@
+.play-page {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    width: 100vw;
+  }
+  
+  .loading {
+    color: #fff;
+    animation: flash 0.5s infinite;
+    font-size: 40px;
+    text-align: center;
+  }
+  
+  @keyframes flash {
+    0% {
+      display: none;
+      opacity: 0;
+    }
+  
+    90% {
+      display: block;
+      opacity: 0.99;
+    }
+  
+    100% {
+      display: block;
+      opacity: 1;
+    }
+  }
+  
+  .logo-small {
+    position: fixed;
+    top: -1.25px;
+    left: -2.5px;
+    width: 125px;
+    /* pointer-events: none; */
+  }
+  
+  .disabled-button {
+    pointer-events: none;
+    opacity: 0.5;
+  }
+  
+  .stats {
+    position: fixed;
+    bottom: 15vh;
+    color: #fff;
+    background: rgb(0 0 0 / 0.4);
+    width: 100%;
+    text-align: center;
+    font-size: 2.5vh;
+    height: 4vh;
+    display: flex;
+    justify-content: space-evenly;
+  }
+  
+  /* .stats-coin {
+    height: 1.8vh;
+    margin-left: 0.5vw;
+  } */
+  
+  .stats > div {
+    min-width: 120px;
+  }

@@ -1,0 +1,74 @@
+name: Deploy
+
+on:
+  push:
+    branches:
+      - main
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v3
+    
+    - name: Set up Node.js
+      uses: actions/setup-node@v3
+      with:
+        node-version: '20'
+    
+    - name: Install dependencies
+      run: |
+        cd client
+        npm install --legacy-peer-deps
+        cd ../server
+        npm install
+    
+    - name: Install TypeScript
+      run: |
+        cd server
+        npm install typescript
+    
+    - name: Run TypeScript compilation
+      run: |
+        cd server
+        tsc
+    
+    - name: Build client
+      run: |
+        cd client
+        npm run build
+    
+    - name: Setup SSH
+      run: |
+        mkdir -p ~/.ssh
+        echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+        chmod 600 ~/.ssh/id_rsa
+        ssh-keyscan ${{ secrets.VPS_IP }} >> ~/.ssh/known_hosts
+      
+    - name: Rsync files to VPS
+      env:
+        VPS_IP: ${{ secrets.VPS_IP }}
+        DEPLOY_DIR: /home/hermit/apps/alpharand_mini_app
+      run: |
+        rsync -avz --delete \
+        --exclude='.env' \
+          -e "ssh -o StrictHostKeyChecking=no -i ~/.ssh/id_rsa" \
+          ./ root@${{ secrets.VPS_IP }}:$DEPLOY_DIR
+    
+    - name: Deploy to VPS
+      env:
+        PM2_HOME: /home/root/.pm2
+        VPS_IP: ${{ secrets.VPS_IP }}
+        DEPLOY_DIR: /home/hermit/apps/alpharand_mini_app
+      run: |
+        ssh -o StrictHostKeyChecking=no root@${{ secrets.VPS_IP }} "
+          cd $DEPLOY_DIR
+          # Copy .env to dist/
+          cp server/.env server/dist/
+          # Restart PM2
+          pm2 stop server/dist/server.js
+          pm2 start server/dist/server.js
+          pm2 save
+        "

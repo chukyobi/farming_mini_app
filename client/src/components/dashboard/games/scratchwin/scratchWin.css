@@ -1,0 +1,49 @@
+.home-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 16px;
+  color: white;
+  overflow: hidden;
+   
+  }
+  
+  .home-page-logo {
+    height: 40.75vh;
+    width: min(500px, 100vw);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    pointer-events: none;
+    animation: wiggle 4s infinite;
+  }
+  
+  @keyframes wiggle {
+    0% {
+      transform: scale(1, 1) rotateZ(0deg);
+    }
+    25% {
+      transform: scale(1, 1) rotateZ(0deg);
+    }
+    50% {
+      transform: scale(1, 1) rotateZ(0deg);
+    }
+    60% {
+      transform: scale(1, 1) rotateZ(0deg);
+    }
+    70% {
+      transform: scale(0.95, 1.05) rotateZ(-1deg);
+    }
+    100% {
+      transform: scale(1, 1) rotateZ(0deg);
+    }
+  }
+  
+  .copyright {
+    color: #fff;
+    position: fixed;
+    bottom: 0;
+    margin: 1vh 0;
+    font-size: min(5vw, 20px);
+  }

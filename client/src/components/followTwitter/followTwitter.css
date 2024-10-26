@@ -1,0 +1,105 @@
+
+.follow_container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    max-width: 300px;
+    margin-left: 12%;
+    color: white;
+  }
+  
+  .content {
+    text-align: center;
+  }
+  
+  .folow_icon {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 80px;
+    height: 80px;
+    background-color: #333a33;
+    border-radius: 50%;
+    margin: 0 auto 20px;
+  }
+  
+  .follow_icon span {
+    font-size: 40px;
+    color: #00ff00;
+  }
+  
+  h2 {
+    font-size: 27px;
+    margin-bottom: 10px;
+    font-weight: 900;
+    line-height: 34.8px;
+  }
+  
+  p {
+    margin-bottom: 20px;
+    font-size: 15.5px;
+  }
+  
+  .complete-task-button {
+    background-color: #00ff00;
+    border: none;
+    margin-top: 20%;
+    color: black;
+    padding: 15px 20px;
+    font-size: 16px;
+    border-radius: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    width: 95%;
+    max-width: 400px; 
+    margin: 0 auto; 
+    display: block;
+  }
+  
+  .complete-task-button:hover {
+    background-color: #00cc00;
+  }
+  
+  .modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .modal-content {
+    background: #333a33;
+    padding: 30px;
+    border-radius: 10px;
+    text-align: center;
+    position: relative;
+  }
+  
+  .close-button {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+  }
+  
+  .twitter-embed {
+    margin: 20px 0;
+  }
+  
+  .follow-button {
+    padding: 10px 20px;
+    background-color: #1DA1F2;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }

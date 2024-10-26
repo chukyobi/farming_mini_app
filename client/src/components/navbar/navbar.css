@@ -1,0 +1,103 @@
+/* src/components/navbar.css */
+.navbar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background-color: #11101C;
+  max-width: auto;
+  
+}
+
+.navbar-links {
+  display: flex;
+  justify-content: space-around;
+}
+
+.link {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.3s, transform 0.3s;
+  cursor: pointer;
+}
+.link p {
+  font-size: small;
+}
+
+.link img {
+  width: 28px;
+  height: 28px;
+  transition: transform 0.3s, filter 0.3s;
+}
+
+.link:hover img {
+  transform: scale(1.1); /* Slightly enlarge the icon on hover */
+  filter: brightness(1.2); /* Brighten the icon on hover */
+}
+
+.link:hover {
+  color: #A3FF12; /* Change text color on hover */
+}
+
+.link.active img {
+  transform: scale(1.2); /* Make the icon larger */
+}
+
+.link.active {
+  color: #A3FF12;
+}
+
+/* .link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 40%;
+  height: 1px;
+  background-color: #00ff00;
+} */
+
+/* Media Queries for Responsiveness */
+
+/* Larger screens */
+@media (max-width: 1200px) {
+  .link img {
+    width: 28px;
+    height: 28px;
+  }
+}
+
+/* Medium screens */
+@media (max-width: 992px) {
+  .link img {
+    width: 25px;
+    height: 25px;
+  }
+}
+
+/* Tablets */
+@media (max-width: 768px) {
+  .link img {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+/* Mobile phones */
+@media (max-width: 576px) {
+  .navbar {
+    padding-bottom: 3%;
+    padding-top: 3%;
+  }
+  
+  .link img {
+    width: 15px;
+    height: 15px;
+  }
+}
